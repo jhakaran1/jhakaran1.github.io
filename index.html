@@ -1,13 +1,67 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>About Me</h1>
+<div>
+<h1 class="name">About Me</h1>
+<div class="details">
 <p>Passionate about applying data-driven solutions to complex challenges, I completed my master's degree at Cornell University in August 2023, where my research focused on exploring the applications of machine learning and optimization methods in mechanical engineering. I developed mathematical models to solve intricate problems in biotechnology as a part of an NSF-supported project, while also developing automated tools to solve tedious image analysis tasks using computer vision methods.</p>
 
 <p>Besides, I have been significantly struck by the recent advancement of generative AI, and I have delved into natural language processing and its application in generating educational content, employing transformer models to provide feedback on the effectiveness of an argument.</p>
 
 <p>Previously, I worked as a software developer at The Gene Box, where I developed a Django-based webapp that enabled users to access their genetic reports and recommendations online, and also contributed to the development of a machine learning model that predicted diseases based on the microbiome content of the user with over 90% accuracy. My work at The Gene Box allowed me to combine my technical skills with my curiosity and enthusiasm for genetics and health.</p>
-
-<h1><a href="https://github.com/jhakaran1">Github</a></h1>
+</div>
+</div>
+<div>
+<h1 class="name"><a href="https://github.com/jhakaran1">Projects</a></h1>
+<div class="details">
+    <ul>
+        <li>Natural Language Processing</li>
+        <ul>
+            <li><a href="https://arxiv.org/abs/2307.04276">Automatic Essay Scoring to provide feedback on argument persuasiveness</a></li>
+            <li><a href="https://github.com/jhakaran1/TextSummarizer"></a>Automatic Text Summarization and its application in summarizing news articles</li>
+        </ul>
+    </ul>
+</div>
+</div>
 </body>
+
+<script type="text/javascript">
+    $(".name").each(function(){
+      $(this).click(function(event){
+        event.preventDefault();
+        $(this).next(".details").toggle();
+      });
+    });
+    
+    </script>
+    <style media="screen">
+    .details{
+         display:none;
+      }
+    
+      .right_button{
+        text-align: right;
+      }
+    
+      .fixed{
+        position: fixed;
+        left: 100%;
+        top: 90%;
+        margin-left: -300px;
+      }
+    
+      .small-td{
+      border: solid 1px;
+      text-align: center;
+      max-width: 20%;
+      /* padding: 5px; */
+    }
+    
+    .big-table td,.big-table th{
+        border: solid 1px;
+        text-align: center;
+        min-width: 200px;
+        /* padding: 5px; */
+     }
+    </style>
 </html>
