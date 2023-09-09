@@ -1,67 +1,124 @@
 <!DOCTYPE html>
 <html>
 <body>
-<div>
-<h1 class="name">About Me</h1>
-<div class="details">
-<p>Passionate about applying data-driven solutions to complex challenges, I completed my master's degree at Cornell University in August 2023, where my research focused on exploring the applications of machine learning and optimization methods in mechanical engineering. I developed mathematical models to solve intricate problems in biotechnology as a part of an NSF-supported project, while also developing automated tools to solve tedious image analysis tasks using computer vision methods.</p>
+    <!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<p>Besides, I have been significantly struck by the recent advancement of generative AI, and I have delved into natural language processing and its application in generating educational content, employing transformer models to provide feedback on the effectiveness of an argument.</p>
-
-<p>Previously, I worked as a software developer at The Gene Box, where I developed a Django-based webapp that enabled users to access their genetic reports and recommendations online, and also contributed to the development of a machine learning model that predicted diseases based on the microbiome content of the user with over 90% accuracy. My work at The Gene Box allowed me to combine my technical skills with my curiosity and enthusiasm for genetics and health.</p>
+<img src="Photo.jpeg" class="photo" align="right">
+<div class="socials">
+    <a href="https://github.com/jhakaran1" class="fa fa-github"></a>
+    <a href="https://twitter.com/BurpyLehri" class="fa fa-twitter"></a>
+    <a href="https://thenaivepen.wordpress.com/" class="fa fa-wordpress"></a>
+    <a href="https://www.instagram.com/jhakaran56/" class="fa fa-instagram"></a></div>
+</body>
+<div class="text">
+<h1 class="about" onclick="toggle_visibility('about_details')">About Me</h1>
+<div class="about_details">
+<p>I am Karan Jha and I recently finished my Master of Science program from Cornell University. I possess a profound enthusiasm for the application of machine learning and optimization methodologies to address intricate and multifaceted challenges. Throughout my academic and professional pursuits, I have engaged extensively in leveraging machine learning algorithms across various domains, including natural language processing, image analysis, disease prediction, and the development of personalized health recommendations.</p>
+<p>Below are the links to some of the cool projects that I have worked on. You can click on any section heading to show/hide the section.</p>
 </div>
-</div>
-<div>
-<h1 class="name"><a href="https://github.com/jhakaran1">Projects</a></h1>
-<div class="details">
+<h1 class="projects" onclick="toggle_visibility('project_details')">Projects</h1>
+<div class="project_details">
     <ul>
         <li>Natural Language Processing</li>
         <ul>
-            <li><a href="https://arxiv.org/abs/2307.04276">Automatic Essay Scoring to provide feedback on argument persuasiveness</a></li>
-            <li><a href="https://github.com/jhakaran1/TextSummarizer"></a>Automatic Text Summarization and its application in summarizing news articles</li>
+            <li><a href="https://arxiv.org/abs/2307.04276">Automatic essay scoring to provide feedback on argument persuasiveness</a></li>
+            <li><a href="https://github.com/jhakaran1/TextSummarizer">Automatic text summarization and its application in summarizing news articles</a></li>
+        </ul>
+        <li>Computer Vision</li>
+        <ul>
+            <li><a href="https://github.com/jhakaran1/BacteriaDetection">Automated image processing to calculate distance traveled by cells in microfluidic channels</a></li>
+        </ul>
+        <li>Optimization</li>
+        <ul>
+            <li><a href="#">Estimation of bacterial Young;s modulus using optimization based inverse finite element analysis</a></li>
+        </ul>
+        <li>Game-Theory</li>
+        <ul>
+            <li><a href="https://github.com/jhakaran1/PyGameTheory">PyGameTheory: Python package to solve static games of complete information</a></li>
         </ul>
     </ul>
 </div>
-</div>
-</body>
+<!-- Add font awesome icons -->
 
 </html>
 <script type="text/javascript">
-    $(".name").each(function(){
-      $(this).click(function(event){
-        event.preventDefault();
-        $(this).next(".details").toggle();
-      });
-    });
-    
-    </script>
-    <style media="screen">
-    .details{
-         display:none;
-      }
-    
-      .right_button{
-        text-align: right;
-      }
-    
-      .fixed{
-        position: fixed;
-        left: 100%;
-        top: 90%;
-        margin-left: -300px;
-      }
-    
-      .small-td{
-      border: solid 1px;
-      text-align: center;
-      max-width: 20%;
-      /* padding: 5px; */
+function toggle_visibility(className) {
+    elements = document.getElementsByClassName(className);
+    elements[0].style.display = elements[0].style.display == 'none' ? 'inline' : 'none';
+    console.log('how')
+}
+ </script>
+<style media="screen">
+
+.about {
+    cursor: pointer;
+}
+
+.projects {
+    cursor: pointer;
+}
+
+.about_details{
+        display:inline;
     }
+.project_details{
+        display:inline;
+    }
+.photo {
+    width: 400px;
+    height: auto;
+    margin-right: 40px;
     
-    .big-table td,.big-table th{
-        border: solid 1px;
-        text-align: center;
-        min-width: 200px;
-        /* padding: 5px; */
-     }
-    </style>
+}
+
+.text {
+    margin-left: 40px;
+    width: 800px;
+    font-size: 20px;
+}
+
+.socials {
+    position: fixed;
+    bottom: 100px;
+    right: 70px;
+}
+ /* Style all font awesome icons */
+ .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-instagram {
+  background: #e24129;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+} 
+
+.fa-github {
+  background: #050505;
+  color: white;
+} 
+
+.fa-wordpress {
+  background: #71aac0;
+  color: white;
+} 
+
+</style>
